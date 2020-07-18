@@ -10,12 +10,14 @@ public class entities {
 	
 	private Double saldo; 
 	
-	public entities(Integer codigo, String descricao, Double saldo, Integer escolha) {
+	public entities(int codigo, String descricao, double saldo) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 		this.saldo = saldo;
 		this.escolha=escolha;
 	}
+
+	
 
 	public Integer getEscolha() {
 		return escolha;
