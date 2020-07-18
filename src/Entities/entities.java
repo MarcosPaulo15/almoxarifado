@@ -1,30 +1,21 @@
 package Entities;
 
 public class entities {
-	
-	private Integer escolha;
-	
-	private Integer codigo; 
+	private Integer codigo;
 
-	private String descricao; 
+	private String descricao;
+
+	private Double saldo;
 	
-	private Double saldo; 
-	
+	public entities() {
+		
+	}
+
 	public entities(int codigo, String descricao, double saldo) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 		this.saldo = saldo;
-		this.escolha=escolha;
-	}
-
-	
-
-	public Integer getEscolha() {
-		return escolha;
-	}
-
-	public void setEscolha(Integer escolha) {
-		this.escolha = escolha;
+		
 	}
 
 	public Integer getCodigo() {
@@ -53,9 +44,7 @@ public class entities {
 
 	@Override
 	public String toString() {
-		return "Codigo=" + codigo + ", nome=" + descricao + ", saldo=" + saldo+ ", escolha"+ escolha ;
+		return "Codigo=" + codigo + ", nome=" + descricao + ", saldo=" + saldo;
 	}
-	
-	
 
 }

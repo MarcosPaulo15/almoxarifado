@@ -15,17 +15,13 @@ public class Program {
 		List<entities> lista = new ArrayList<>();
 
 		int x = 1000;
-		int codigo = 0001;
-		
-		for (int i=0; i<=4; i++ ) {
-			// vou fazer uma estrutura para escolha de cada função (saldo, entrada de material etc...) 
-		}
-		
+		int codigo =0;
+
 		for (int i = 0; i <= x; i++) {
-			System.out.println("Favor digite o codigo, lembrando que o codigo anterior é: " + codigo);
+			System.out.println("Favor digite o codigo do produto, lembrando que o codigo do produto anterior é: " + codigo);
 			codigo = scan.nextInt();
 
-			while (hasCodigo(lista, codigo)) {
+			while (hasCodigo (lista, codigo)) {
 
 				System.out.println("código já existente favor digite novamente. ");
 
@@ -40,7 +36,7 @@ public class Program {
 
 			double saldo = scan.nextDouble();
 
-			lista.add(new entities(codigo, descricao, saldo ));
+			lista.add(new entities(codigo, descricao, saldo));
 
 			System.out.println("Deseja ver o saldo de todos os produtos? se sim digite 9 ");
 
@@ -60,8 +56,9 @@ public class Program {
 	}
 
 	private static boolean hasCodigo(List<entities> lista, int codigo) {
-		// TODO Auto-generated method stub
-		return false;
+
+			entities ent= lista.stream().filter(x-> x.getCodigo() == codigo).findFirst().orElse(null);
+		return ent != null;
 	}
 
 }
